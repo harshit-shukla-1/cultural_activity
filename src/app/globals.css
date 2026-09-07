@@ -83,6 +83,14 @@ h2 { font-size: clamp(38px, 4.5vw, 61px); font-weight: 400; letter-spacing: -.05
 .month-name strong { font-size: 27px; font-weight: 400; }
 .month-name small { color: var(--muted); font-size: 13px; }
 .month-arrow { color: var(--vermilion); font-size: 21px; text-align: right; }
+.event-grid { margin-top: 65px; }
+.event-month { border-top: 1px solid var(--line); padding: 30px 0 42px; }
+.event-month h3 { color: var(--vermilion); font-size: 24px; font-weight: 400; margin: 0 0 20px; }
+.event-cards { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
+.event-card { background: rgba(255,248,237,.58); min-height: 175px; padding: 20px; }
+.event-card > span { color: var(--muted); font-family: Arial, sans-serif; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.event-card h4 { font-size: 20px; font-weight: 400; line-height: 1.05; margin: 22px 0 10px; }
+.event-card p { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0; }
 .live-panel { background: var(--teal); color: #f8f1e7; padding-bottom: 82px; padding-top: 30px; }
 .live-marker { color: #d7e5d9; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .live-dot { background: #f0bb39; border-radius: 50%; display: inline-block; height: 7px; margin-right: 9px; width: 7px; }
@@ -111,6 +119,7 @@ h2 { font-size: clamp(38px, 4.5vw, 61px); font-weight: 400; letter-spacing: -.05
 	.month-name { display: block; }
 	.month-name small { display: block; margin-top: 3px; }
 	.month-count { text-align: right; }
+	.event-cards { grid-template-columns: 1fr; }
 	.live-description { margin-top: 35px; }
 	.footer { gap: 15px; line-height: 1.5; }
 }
