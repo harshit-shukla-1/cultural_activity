@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { copy, eventContent } from "./content";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
         <nav className="topnav" aria-label="Main navigation">
           <a className="active" href="#journey">{text.navJourney}</a>
           <a href="#events">{text.navEvents}</a>
-          <a href="#quiz">{text.navQuiz}</a>
+          <a href="/quiz">{text.navQuiz}</a>
         </nav>
 
         <div className="topbar-actions">
@@ -84,7 +85,7 @@ export default function Home() {
         <div className="event-grid" id="presentation">
           {eventContent.map((month) => <div className="event-month" id={month.month.toLowerCase()} key={month.month}>
             <h3>{language === "DE" ? month.month === "July" ? "Juli" : month.month === "August" ? "August" : "September" : month.month}</h3>
-            <div className="event-cards">{month.events.map((event) => <article className="event-card" key={event.name}><span>{language === "DE" ? event.placeDe : event.place}</span><h4>{language === "DE" ? event.de : event.name}</h4><p>{language === "DE" ? event.textDe : event.text}</p></article>)}</div>
+            <div className="event-cards">{month.events.map((event) => <article className="event-card" key={event.name}><Image src={event.image} alt={language === "DE" ? event.de : event.name} width={640} height={360} /><div className="event-card-body"><span>{language === "DE" ? event.placeDe : event.place}</span><h4>{language === "DE" ? event.de : event.name}</h4><p>{language === "DE" ? event.textDe : event.text}</p></div></article>)}</div>
           </div>)}
         </div>
       </section>
